@@ -164,7 +164,6 @@ $ make install  # (optionally)
 <pre><code># In a catkin workspace
 $ catkin_make
 $ catkin_make install  # (optionally)
-
 # If /src has other name like /my_src
 # In a catkin workspace
 $ catkin_make --source my_src
