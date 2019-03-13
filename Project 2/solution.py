@@ -46,7 +46,7 @@ def angle_between(v1,v2):
     '''
     v1_unit = unit_vector(v1)
     v2_unit = unit_vector(v2)
-    return np.arccos(np.clip(np.dot(v1_unit, v2_unit), -1.0, -1.0))
+    return np.arccos(np.clip(np.dot(v1_unit, v2_unit), -1.0, 1.0))
 
 def matrix_by_vector_multiplication(matrix, vector):
     ''' Multiplication of matrix44 by vector3'''
