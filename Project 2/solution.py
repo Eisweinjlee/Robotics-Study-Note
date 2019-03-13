@@ -81,7 +81,6 @@ def publish_transforms():
             tf.transformations.quaternion_about_axis(1.5, (0.0, 0.0, 1.0))),
         tf.transformations.translation_matrix((0.0, -1.0, 0.0)))
     robot_transform.transform = message_from_transform(T2)
-    rospy.loginfo("\n T2 = %s \n", T2)
 
     br.sendTransform(robot_transform)
 
@@ -130,11 +129,9 @@ def publish_transforms():
     # angle difference betweeen x_axis and p2_camera
     x_axis = [1.0, 0.0, 0.0]
     angle = angle_between(x_axis, p2_camera)
-    rospy.logdebug("angle = %s\n", angle*180/3.13159)
 
     # calculate the rotation axis, which x_axis should rotate about
     v_normal = np.cross(x_axis, p2_camera)
-    rospy.logdebug("v_normal = %s\n", v_normal)
     # apply it
     R3 = tf.transformations.quaternion_matrix(
         tf.transformations.quaternion_about_axis(angle, v_normal))
