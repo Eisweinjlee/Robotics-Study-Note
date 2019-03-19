@@ -33,7 +33,7 @@ This space telling the configuration of robot is also called <em><strong>Robot C
 How can we do with this?</li>
 </ul>
 <p>This kind of method is called <em><strong>sampling-based motion planning algorithms</strong></em> or <em><strong>stochastic motion planning</strong></em>. The main idea is to take as many as random explorations on configuration space, and with the return information the validity is checked and steps can be done.</p>
-<h2 id="rapidly-exploring-random-trees-rrt">8.4 Rapidly-Exploring Random Trees (RRT)</h2>
+<h3 id="rapidly-exploring-random-trees-rrt">8.3.1 Rapidly-Exploring Random Trees (RRT)</h3>
 <p><strong>Input:</strong> start and goal point in C-Space<br>
 <strong>Output:</strong> path from start to goal<br>
 <strong>Algorithm:</strong></p>
@@ -57,9 +57,38 @@ How can we do with this?</li>
 <p><strong>Note:</strong> It is a simple explanation and there are many possible variations.	 for production-level algorithms.</p>
 <p><strong>Extenal call</strong> - <strong>random point</strong>: call a random function, easy for high-level program language.<br>
 <strong>Extenal call</strong> - <strong>intersects obstacle</strong>: it is done by discretizing line, and then checking individual points for collision.</p>
-<h2 id="probabilistic-roadmaps-prm">8.5 Probabilistic Roadmaps (PRM)</h2>
-<p><strong>Map Construction:</strong><br>
-<strong>Input:</strong><br>
-<strong>Output:</strong><br>
+<h3 id="probabilistic-roadmaps-prm">8.3.2 Probabilistic Roadmaps (PRM)</h3>
+<p><strong>Roadmap Construction:</strong></p>
+<ul>
+<li>While number of points in roadmap lower than threshold:
+<ul>
+<li>sample <strong>random</strong> point in C-space</li>
+<li>if new point is not in collision:
+<ul>
+<li>connect new point to all other points in the roadmap, as long as lines do not <strong>intersect obstacles</strong>.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>Input:</strong> start and goal point in C-space<br>
+<strong>Output:</strong> path from start to goal<br>
 <strong>Path finding:</strong></p>
+<ul>
+<li>connect start point to nearest point in roadmap such that connecting line does not <strong>intersect obstacle</strong>.</li>
+<li>connect goal point to nearest point in roadmap such that connecting line does not <strong>intersect obstacle</strong>.</li>
+<li><strong>find a path between start and goal going exclusively on the roadmap</strong></li>
+</ul>
+<h3 id="comments-of-sampling-based-method">8.3.3 Comments of Sampling-based Method</h3>
+<ul>
+<li><strong>Merit:</strong> only requires the ability to quickly check if a point in C-space is “legal” or not (often that means collision-free)</li>
+<li>Many versions are <strong>probabilisticaly complete</strong>: if a path exists, it will be found in finite time.</li>
+<li>In practice, these algorithms tend to be very effective in <strong>high-dimensional</strong> spaces.</li>
+<li><strong>Demerit:</strong> There are also no guarantees regarding quality of solution:
+<ul>
+<li>not guaranteed to be the shortest</li>
+<li>often needs post-processing (e.g. to eliminate zigs and zags)</li>
+</ul>
+</li>
+</ul>
 
