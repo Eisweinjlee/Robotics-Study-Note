@@ -91,4 +91,6 @@ How can we do with this?</li>
 </ul>
 </li>
 </ul>
+<h2 id="software-package---moveit">8.4 Software Package - MoveIt!</h2>
+<p>Study this! <a href="http://moveit.ros.org/">MoveIt on ROS</a></p>
 
