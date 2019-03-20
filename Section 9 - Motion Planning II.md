@@ -76,4 +76,21 @@ However, differential drive robots are <strong>non-holonomic</strong>, because t
 Therefore, the motion of the robots is limit in a range, and we need to find some ways to plan a smoother path. For example, pre-define 5 directions for the motion of robot. Then your RRT tree might grow only by choosing one of the five directions.</p>
 <h2 id="easy-example-of-the-system">10.2 Easy example of the system</h2>
 <p><img src="https://lh3.googleusercontent.com/MTdl4IjBy8JxazE9yPe5py3RBpwZsqcwjD78lwOrOwEDEac9IR7ItoLdJt_CpGxagFg4Id7r_rVQurxSL6YW2XbH34nLTvvQt21WG9ghysZeqTYe4IRsRaGm0lxkXJQ91EZT9OSFSSt408AoLToF59ThjBKHo9nF71jOS_wm_q6XmxgVLnZcLKm-laQOJVxYGYxgtsg_BfUD0FWA1-MkRNW951EsIZXApiixHobLEk_hqKcSjjdV6DBUXviD6aBjNjBVJiQ5aVmOOpXInPUzdwgJOgx-I2XUsc8fLIBJjCH9vyTA1wD3ZrKXfIyVtJtVUA-H8S8C14wwrnj5aB-AsWPqWAa7UloZHKfaEd7URhXXEopbFkuGYEr9OwyY_eFCY7-xhBmW8RISvKJvl7NsJbnCr0xHa4VoJxilNoUgaY7z9hRZJvPb3NT1_TW1NN1aN3IRTjbfX58oMen5J5okXueJMYfKIfCEJyTglikgCCTXwxT_Z_ZnVZO-glsUStLWDEcRejgAZk003gxLKlKMkRWenveu21p0YyK6LtdQeU8exPI8otTi26jMCDaaPMWDUgscZu6j7xabz-ZfwxLV-M6qIcjl4oVghq7TIrjjXkDX2pqU111GbvfAvzmrmE5DPtuwl_tfEH0d-63ety-KXyRCFMXw7-XH5UDWCk2hiczKwXPso_7A6UTT6PRDHBgLcAK_kupVQ8KavmeiHSMbEjBH=w869-h565-no" alt="enter image description here"></p>
+<h2 id="final-problem-set">10.3 Final problem set</h2>
+<ul>
+<li>What are the differences between a matrix inverse and a pseudo-inverse?</li>
+<li>When is it impossible to compute the inverse of a robot Jacobian?</li>
+<li>How can you avoid coming  <strong>close</strong>  to singular robot configurations when doing Cartesian Control?</li>
+<li>When performing Cartesian Control in order to get the end-effector from a start pose to a goal pose, what Cartesian path between the start and the goal does the end-effector follow? (We assume that execution is successful and the robot never comes close to a singularity.)</li>
+<li>What is the Configuration Space (C-Space) of a robot?</li>
+<li>How many dimensions does the C-Space of the Kuka LWR robot (used in the class projects) have?</li>
+<li>What are different ways in which you might store an obstacle map for a robot?</li>
+<li>What are the basic building blocks (i.e. external calls) that you need to have available in order to implement a sampling-based motion planning algorithms?</li>
+<li>If you run the RRT algorithm multiple times on the same problem (same start, goal, and obstacles) will you get the same result? Why?</li>
+<li>What guarantees does a graph search algorithm such as Dijkstra’s or A* offer for a motion planning problem?</li>
+<li>What guarantees does a sampling-based algorithm such as RRT or PRM offer for a motion planning problem?</li>
+<li>What is the main advantage of the A* algorithm compared to Dijkstra’s algorithm?</li>
+<li>Is a typical shopping cart (two fixed wheels in the back, two omni-directional casters in the front) a holonomic vehicle? Why?</li>
+<li>A differential drive robot has positive (forward) velocity at the left wheel, and zero velocity at the right wheel. Assuming no wheel slip, what motion will the robot perform?</li>
+</ul>
 
